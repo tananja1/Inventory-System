@@ -1,0 +1,8 @@
+# Ignore build and IDE folders
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.db
+*.log
