@@ -32,11 +32,13 @@ namespace InventoryApp.Forms
             {
                 Name = txtName.Text,
                 CategoryId = (int)cmbCategory.SelectedValue,
+                Supplier = txtSupplier.Text,
                 PurchasePrice = decimal.Parse(txtPurchase.Text),
                 SalePrice = decimal.Parse(txtSale.Text),
                 ReorderLevel = int.Parse(txtReorder.Text),
                 QuantityOnHand = 0
             };
+
 
             db.Products.Add(product);
             db.SaveChanges();
@@ -76,6 +78,39 @@ namespace InventoryApp.Forms
 
         }
 
+        private void SearchProducts()
+        {
+            using var db = new AppDbContext();
+            var query = db.Products.AsQueryable();
+
+            string keyword = txtSearch.Text.ToLower();
+            string searchBy = cmbSearchBy.Text;
+
+            if (searchBy == "Name")
+                query = query.Where(p => p.Name.ToLower().Contains(keyword));
+            else if (searchBy == "Category")
+                query = query.Where(p => p.Category.Name.ToLower().Contains(keyword));
+            else if (searchBy == "Supplier")
+                query = query.Where(p => p.Supplier.ToLower().Contains(keyword));
+
+            var results = query
+                .Select(p => new
+                {
+                    p.ProductId,
+                    p.Name,
+                    Category = p.Category.Name,
+                    p.Supplier,
+                    p.PurchasePrice,
+                    p.SalePrice,
+                    p.QuantityOnHand,
+                    p.ReorderLevel
+                })
+                .ToList();
+
+            dgvProductsList.DataSource = results;
+        }
+
+
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
@@ -88,6 +123,11 @@ namespace InventoryApp.Forms
             var categoryForm = new CategoryForm();
             categoryForm.ShowDialog(); // Show it as a modal dialog
             LoadCategories();          // Reload the ComboBox after closing
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchProducts();
         }
     }
 }

@@ -43,6 +43,11 @@
             btnEdit = new Button();
             btnDelete = new Button();
             btnManageCategories = new Button();
+            label6 = new Label();
+            txtSupplier = new TextBox();
+            txtSearch = new TextBox();
+            cmbSearchBy = new ComboBox();
+            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductsList).BeginInit();
             SuspendLayout();
             // 
@@ -131,7 +136,7 @@
             // dgvProductsList
             // 
             dgvProductsList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductsList.Location = new Point(255, 220);
+            dgvProductsList.Location = new Point(273, 229);
             dgvProductsList.Name = "dgvProductsList";
             dgvProductsList.RowHeadersWidth = 62;
             dgvProductsList.Size = new Size(515, 261);
@@ -139,7 +144,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(38, 277);
+            btnAdd.Location = new Point(38, 232);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(112, 34);
             btnAdd.TabIndex = 11;
@@ -149,7 +154,7 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(38, 344);
+            btnEdit.Location = new Point(38, 299);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
             btnEdit.TabIndex = 12;
@@ -158,7 +163,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(38, 410);
+            btnDelete.Location = new Point(38, 365);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 13;
@@ -167,7 +172,7 @@
             // 
             // btnManageCategories
             // 
-            btnManageCategories.Location = new Point(38, 468);
+            btnManageCategories.Location = new Point(38, 423);
             btnManageCategories.Name = "btnManageCategories";
             btnManageCategories.Size = new Size(185, 34);
             btnManageCategories.TabIndex = 14;
@@ -175,11 +180,58 @@
             btnManageCategories.UseVisualStyleBackColor = true;
             btnManageCategories.Click += btnManageCategories_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(399, 172);
+            label6.Name = "label6";
+            label6.Size = new Size(77, 25);
+            label6.TabIndex = 15;
+            label6.Text = "Supplier";
+            // 
+            // txtSupplier
+            // 
+            txtSupplier.Location = new Point(491, 172);
+            txtSupplier.Name = "txtSupplier";
+            txtSupplier.Size = new Size(216, 31);
+            txtSupplier.TabIndex = 16;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(273, 516);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(150, 31);
+            txtSearch.TabIndex = 17;
+            // 
+            // cmbSearchBy
+            // 
+            cmbSearchBy.FormattingEnabled = true;
+            cmbSearchBy.Items.AddRange(new object[] { "Name", "Category", "Supplier" });
+            cmbSearchBy.Location = new Point(38, 480);
+            cmbSearchBy.Name = "cmbSearchBy";
+            cmbSearchBy.Size = new Size(185, 33);
+            cmbSearchBy.TabIndex = 18;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(462, 516);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(112, 34);
+            btnSearch.TabIndex = 19;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // ProductForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 502);
+            ClientSize = new Size(800, 640);
+            Controls.Add(btnSearch);
+            Controls.Add(cmbSearchBy);
+            Controls.Add(txtSearch);
+            Controls.Add(txtSupplier);
+            Controls.Add(label6);
             Controls.Add(btnManageCategories);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
@@ -220,5 +272,10 @@
         private Button btnEdit;
         private Button btnDelete;
         private Button btnManageCategories;
+        private Label label6;
+        private TextBox txtSupplier;
+        private TextBox txtSearch;
+        private ComboBox cmbSearchBy;
+        private Button btnSearch;
     }
 }
