@@ -48,6 +48,7 @@
             txtSearch = new TextBox();
             cmbSearchBy = new ComboBox();
             btnSearch = new Button();
+            btnStockMovement = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductsList).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(399, 42);
+            label2.Location = new Point(69, 219);
             label2.Name = "label2";
             label2.Size = new Size(84, 25);
             label2.TabIndex = 1;
@@ -81,7 +82,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(399, 119);
+            label4.Location = new Point(69, 296);
             label4.Name = "label4";
             label4.Size = new Size(86, 25);
             label4.TabIndex = 3;
@@ -119,7 +120,7 @@
             // 
             // txtSale
             // 
-            txtSale.Location = new Point(491, 119);
+            txtSale.Location = new Point(161, 296);
             txtSale.Name = "txtSale";
             txtSale.Size = new Size(216, 31);
             txtSale.TabIndex = 8;
@@ -128,7 +129,7 @@
             // 
             cmbCategory.FormattingEnabled = true;
             cmbCategory.Items.AddRange(new object[] { "Fruit", "Vegtables", "Drinks", "Local dish", "Foreign dish" });
-            cmbCategory.Location = new Point(489, 42);
+            cmbCategory.Location = new Point(159, 219);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(218, 33);
             cmbCategory.TabIndex = 9;
@@ -136,15 +137,15 @@
             // dgvProductsList
             // 
             dgvProductsList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductsList.Location = new Point(273, 229);
+            dgvProductsList.Location = new Point(430, 42);
             dgvProductsList.Name = "dgvProductsList";
             dgvProductsList.RowHeadersWidth = 62;
-            dgvProductsList.Size = new Size(515, 261);
+            dgvProductsList.Size = new Size(1233, 387);
             dgvProductsList.TabIndex = 10;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(38, 232);
+            btnAdd.Location = new Point(159, 395);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(112, 34);
             btnAdd.TabIndex = 11;
@@ -154,7 +155,7 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(38, 299);
+            btnEdit.Location = new Point(1128, 485);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
             btnEdit.TabIndex = 12;
@@ -163,7 +164,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(38, 365);
+            btnDelete.Location = new Point(1010, 485);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 13;
@@ -172,7 +173,7 @@
             // 
             // btnManageCategories
             // 
-            btnManageCategories.Location = new Point(38, 423);
+            btnManageCategories.Location = new Point(1248, 484);
             btnManageCategories.Name = "btnManageCategories";
             btnManageCategories.Size = new Size(185, 34);
             btnManageCategories.TabIndex = 14;
@@ -183,7 +184,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(399, 172);
+            label6.Location = new Point(69, 349);
             label6.Name = "label6";
             label6.Size = new Size(77, 25);
             label6.TabIndex = 15;
@@ -191,14 +192,14 @@
             // 
             // txtSupplier
             // 
-            txtSupplier.Location = new Point(491, 172);
+            txtSupplier.Location = new Point(161, 349);
             txtSupplier.Name = "txtSupplier";
             txtSupplier.Size = new Size(216, 31);
             txtSupplier.TabIndex = 16;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(273, 516);
+            txtSearch.Location = new Point(660, 487);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(150, 31);
             txtSearch.TabIndex = 17;
@@ -207,14 +208,14 @@
             // 
             cmbSearchBy.FormattingEnabled = true;
             cmbSearchBy.Items.AddRange(new object[] { "Name", "Category", "Supplier" });
-            cmbSearchBy.Location = new Point(38, 480);
+            cmbSearchBy.Location = new Point(430, 490);
             cmbSearchBy.Name = "cmbSearchBy";
             cmbSearchBy.Size = new Size(185, 33);
             cmbSearchBy.TabIndex = 18;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(462, 516);
+            btnSearch.Location = new Point(853, 485);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(112, 34);
             btnSearch.TabIndex = 19;
@@ -222,11 +223,22 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
+            // btnStockMovement
+            // 
+            btnStockMovement.Location = new Point(1478, 484);
+            btnStockMovement.Name = "btnStockMovement";
+            btnStockMovement.Size = new Size(185, 34);
+            btnStockMovement.TabIndex = 20;
+            btnStockMovement.Text = "Stock Movement";
+            btnStockMovement.UseVisualStyleBackColor = true;
+            btnStockMovement.Click += btnStockMovement_Click;
+            // 
             // ProductForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 640);
+            ClientSize = new Size(1692, 640);
+            Controls.Add(btnStockMovement);
             Controls.Add(btnSearch);
             Controls.Add(cmbSearchBy);
             Controls.Add(txtSearch);
@@ -277,5 +289,6 @@
         private TextBox txtSearch;
         private ComboBox cmbSearchBy;
         private Button btnSearch;
+        private Button btnStockMovement;
     }
 }

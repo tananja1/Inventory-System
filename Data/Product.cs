@@ -8,7 +8,9 @@ namespace InventoryApp.Data
 {
     public class Product
     {
+        
         public int ProductId { get; set; }
+        required
         public string Name { get; set; }
 
         public int CategoryId { get; set; }

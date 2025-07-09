@@ -53,7 +53,8 @@ namespace InventoryApp.Forms
                 {
                     p.ProductId,
                     p.Name,
-                    Category = p.Category.Name,
+                    Category = p.Category != null ? p.Category.Name : "Unknown",
+                    // Category = p.Category.Name,
                     p.PurchasePrice,
                     p.SalePrice,
                     p.QuantityOnHand,
@@ -89,7 +90,8 @@ namespace InventoryApp.Forms
             if (searchBy == "Name")
                 query = query.Where(p => p.Name.ToLower().Contains(keyword));
             else if (searchBy == "Category")
-                query = query.Where(p => p.Category.Name.ToLower().Contains(keyword));
+                query = query.Where(p => p.Category != null && p.Category.Name.ToLower().Contains(keyword));
+            //  query = query.Where(p => p.Category.Name.ToLower().Contains(keyword));
             else if (searchBy == "Supplier")
                 query = query.Where(p => p.Supplier.ToLower().Contains(keyword));
 
@@ -98,7 +100,8 @@ namespace InventoryApp.Forms
                 {
                     p.ProductId,
                     p.Name,
-                    Category = p.Category.Name,
+                    Category = p.Category != null ? p.Category.Name : "Unknown",
+                    // Category = p.Category.Name,
                     p.Supplier,
                     p.PurchasePrice,
                     p.SalePrice,
@@ -129,5 +132,13 @@ namespace InventoryApp.Forms
         {
             SearchProducts();
         }
+
+        private void btnStockMovement_Click(object sender, EventArgs e)
+        {
+            var StockMovementForm = new StockMovementForm();
+            StockMovementForm.ShowDialog(); // Show it as a modal dialog
+                     // Reload the ComboBox after closing
+        }
     }
 }
+

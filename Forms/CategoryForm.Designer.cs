@@ -43,7 +43,7 @@
             dgvCategory.Location = new Point(40, 79);
             dgvCategory.Name = "dgvCategory";
             dgvCategory.RowHeadersWidth = 62;
-            dgvCategory.Size = new Size(479, 269);
+            dgvCategory.Size = new Size(975, 451);
             dgvCategory.TabIndex = 0;
             // 
             // label1
@@ -64,7 +64,7 @@
             // 
             // btnAddCategory
             // 
-            btnAddCategory.Location = new Point(40, 365);
+            btnAddCategory.Location = new Point(89, 555);
             btnAddCategory.Name = "btnAddCategory";
             btnAddCategory.Size = new Size(112, 34);
             btnAddCategory.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // btnRename
             // 
-            btnRename.Location = new Point(208, 365);
+            btnRename.Location = new Point(257, 555);
             btnRename.Name = "btnRename";
             btnRename.Size = new Size(112, 34);
             btnRename.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(379, 365);
+            btnDelete.Location = new Point(428, 555);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1075, 601);
             Controls.Add(btnDelete);
             Controls.Add(btnRename);
             Controls.Add(btnAddCategory);
